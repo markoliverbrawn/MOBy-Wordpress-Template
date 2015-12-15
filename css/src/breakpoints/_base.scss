@@ -1,0 +1,83 @@
+/**
+ * LAYOUT & GRID STYLES
+ * ==================================================
+ */
+ *{@include box-sizing();}
+ body{
+	line-height:1.5em;
+	&>header,&>section,&>footer{
+		@include clear();
+	}
+}
+header>div,footer>div,.wrap {
+	float:none;
+	width:100%;
+	margin: 0 auto;
+	@include clear();
+}
+
+// Add some colour so that the grid can be seen
+/*.sb0,.sb1,.sb2,.sb,nav{border:1px solid #fff;}
+.sb0,.sb1,.sb2{background: darken(#fff,10);}
+.sb{background: darken(#fff,20);}
+nav{background: darken(#fff,30);}*/
+.sb{clear:both;} 
+
+/**
+ * H1, H2, H3, H4, H5 STYLES
+ * ==================================================
+ */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+	text-rendering: optimizelegibility;
+	font-weight: 500;
+	a{text-decoration:none;}
+}
+h1, .h1 {font-size: 2.5em;line-height: 1.333em;}
+h2, .h2 {font-size: 1.75em;line-height: 1.4em;margin-bottom: 0.375em;}
+h3, .h3 {font-size: 1.125em;}
+h4, .h4 {font-size: 1.1em;font-weight: 700;}
+h5, .h5 {font-size: 0.846em;line-height: 2.09em;text-transform: uppercase;letter-spacing: 2px;}
+img{height:auto;max-width:100%;}
+.alignright{
+	float:right;
+	margin:0 0 1em 1em;
+}
+.alignleft{
+	float:left;
+	margin:0 1em 1em 0;
+}
+.aligncenter{
+	display:block;
+	margin:0 auto;
+}
+.wp-caption{
+	max-width:100%;
+}
+
+/**
+ * Navigation styles 
+ * ==================================================
+ */
+nav,.menu{
+	@include clear();
+	ul{
+		border-bottom: 0;
+		//display:none; // Remember that this is mobile first, so hide menus and show with the menu shower
+		margin: 0;
+		li{
+			a{
+				display: block;
+				padding:0.5em;
+				text-decoration: none;
+			}
+		}
+		ul.sub-menu,ul.children{
+			li{
+				a{padding-left:1em;}
+			}
+		}
+	}
+	li.current-menu-item, li.current_page_item, li.current_page_ancestor {
+		&>a {font-weight:bold;}
+	}
+}

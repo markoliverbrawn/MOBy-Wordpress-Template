@@ -1,0 +1,43 @@
+/**
+ * Tablet & Small Desktop Stylesheet 
+ */
+
+/**
+ * Layout & grid
+ * ======================================================
+ */
+header>div,footer>div,.wrap {
+	width: 95%;
+}
+/**
+ * Navigation
+ * ======================================================
+ */
+nav,.menu{
+	display:block!important;
+	.mnavexp{display:none;}
+}
+header,footer{
+	ul.menu {
+		border: 0;
+		li {
+			float: left;
+			margin-right:1em;
+			position: relative;
+			a {
+				border-bottom: 0;
+				&:hover, &:focus {}
+			}
+			&:first-child {}
+			&:last-child {}
+		}
+	}
+}
+/**
+ * Grid
+ * =======================================================
+ */
+.sb{@include grid(1/4);}
+.sb0{@include grid(100%);}
+.sb1{@include grid(3/4);}
+.sb2{@include grid(1/2);}

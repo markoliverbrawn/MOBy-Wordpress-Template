@@ -1,0 +1,489 @@
+{
+  "id": "2f54d940",
+  "cfgVersion": 1,
+  "name": "Wolves Art",
+  "files": {
+    "190c37d2": {
+      "id": "190c37d2",
+      "pid": "2f54d940",
+      "name": "modernizr.js",
+      "input": "js\\src\\modernizr.js",
+      "customOutput": false,
+      "type": "Js",
+      "config": {
+        "autoCompile": true,
+        "uglify": true,
+        "mangle": true,
+        "sourcemaps": false
+      }
+    },
+    "049453ab": {
+      "id": "049453ab",
+      "pid": "2f54d940",
+      "name": "scripts.js",
+      "input": "js\\src\\scripts.js",
+      "customOutput": false,
+      "type": "Js",
+      "config": {
+        "autoCompile": true,
+        "uglify": true,
+        "mangle": true,
+        "sourcemaps": false
+      }
+    },
+    "f5130392": {
+      "id": "f5130392",
+      "pid": "2f54d940",
+      "name": "editor-style.scss",
+      "input": "css\\src\\editor-style.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "expanded",
+        "autoprefixer": false
+      }
+    },
+    "16273c5c": {
+      "id": "16273c5c",
+      "pid": "2f54d940",
+      "name": "style.scss",
+      "input": "css\\src\\style.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
+      }
+    },
+    "a51f4938": {
+      "id": "a51f4938",
+      "pid": "2f54d940",
+      "name": "ie.scss",
+      "input": "css\\src\\ie.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "expanded",
+        "autoprefixer": false
+      }
+    },
+    "b19fedb4": {
+      "id": "b19fedb4",
+      "pid": "2f54d940",
+      "name": "login.scss",
+      "input": "css\\src\\login.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "expanded",
+        "autoprefixer": false
+      }
+    },
+    "b089e7a8": {
+      "id": "b089e7a8",
+      "pid": "2f54d940",
+      "name": "admin.scss",
+      "input": "com\\admin\\admin.scss",
+      "customOutput": "css\\admin.css",
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
+      }
+    }
+  },
+  "imports": {
+    "45291855": {
+      "id": "45291855",
+      "pid": "2f54d940",
+      "path": "css\\src\\salsa\\salsa\\_background.scss",
+      "parents": [
+        "b089e7a8",
+        "16273c5c"
+      ]
+    },
+    "acd8995d": {
+      "id": "acd8995d",
+      "pid": "2f54d940",
+      "path": "com\\countdown\\js\\countdown.js",
+      "parents": [
+        "049453ab"
+      ]
+    },
+    "48232e0b": {
+      "id": "48232e0b",
+      "pid": "2f54d940",
+      "path": "com\\boxes\\js\\boxes.js",
+      "parents": [
+        "049453ab"
+      ]
+    },
+    "4dc638f7": {
+      "id": "4dc638f7",
+      "pid": "2f54d940",
+      "path": "css\\src\\partials\\_normalize.scss",
+      "parents": [
+        "f5130392",
+        "16273c5c"
+      ]
+    },
+    "1dad1272": {
+      "id": "1dad1272",
+      "pid": "2f54d940",
+      "path": "css\\src\\partials\\_typography.scss",
+      "parents": [
+        "f5130392",
+        "a51f4938",
+        "16273c5c"
+      ]
+    },
+    "bc6af9b6": {
+      "id": "bc6af9b6",
+      "pid": "2f54d940",
+      "path": "css\\src\\partials\\_functions.scss",
+      "parents": [
+        "f5130392",
+        "16273c5c"
+      ]
+    },
+    "55381d4a": {
+      "id": "55381d4a",
+      "pid": "2f54d940",
+      "path": "css\\src\\partials\\_mixins.scss",
+      "parents": [
+        "f5130392",
+        "a51f4938",
+        "16273c5c"
+      ]
+    },
+    "eacb8374": {
+      "id": "eacb8374",
+      "pid": "2f54d940",
+      "path": "css\\src\\breakpoints\\_481up.scss",
+      "parents": [
+        "a51f4938",
+        "16273c5c"
+      ]
+    },
+    "c175f84c": {
+      "id": "c175f84c",
+      "pid": "2f54d940",
+      "path": "css\\src\\breakpoints\\_768up.scss",
+      "parents": [
+        "a51f4938",
+        "16273c5c"
+      ]
+    },
+    "b4596257": {
+      "id": "b4596257",
+      "pid": "2f54d940",
+      "path": "css\\src\\breakpoints\\_1030up.scss",
+      "parents": [
+        "a51f4938",
+        "16273c5c"
+      ]
+    },
+    "0a84afe4": {
+      "id": "0a84afe4",
+      "pid": "2f54d940",
+      "path": "fonts\\icomoon\\_icomoon.scss",
+      "parents": [
+        "b089e7a8"
+      ]
+    },
+    "82443dd5": {
+      "id": "82443dd5",
+      "pid": "2f54d940",
+      "path": "css\\src\\salsa\\_salsa.scss",
+      "parents": [
+        "b089e7a8",
+        "16273c5c"
+      ]
+    },
+    "7f62d0ef": {
+      "id": "7f62d0ef",
+      "pid": "2f54d940",
+      "path": "css\\src\\salsa\\salsa\\_functions.scss",
+      "parents": [
+        "b089e7a8",
+        "16273c5c"
+      ]
+    },
+    "e68df325": {
+      "id": "e68df325",
+      "pid": "2f54d940",
+      "path": "css\\src\\salsa\\salsa\\_settings.scss",
+      "parents": [
+        "b089e7a8",
+        "16273c5c"
+      ]
+    },
+    "2fc0a09f": {
+      "id": "2fc0a09f",
+      "pid": "2f54d940",
+      "path": "css\\src\\salsa\\salsa\\_system.scss",
+      "parents": [
+        "b089e7a8",
+        "16273c5c"
+      ]
+    },
+    "415e943d": {
+      "id": "415e943d",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_alerts.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "a9a03b0f": {
+      "id": "a9a03b0f",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_buttons.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "ae075f2e": {
+      "id": "ae075f2e",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_forms.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "5c6e1a61": {
+      "id": "5c6e1a61",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_pagenavi.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "92d1ec08": {
+      "id": "92d1ec08",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_comments.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "4040d4dd": {
+      "id": "4040d4dd",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_galleries.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "24f419dd": {
+      "id": "24f419dd",
+      "pid": "2f54d940",
+      "path": "css\\src\\modules\\_woocommerce.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "d37a38a5": {
+      "id": "d37a38a5",
+      "pid": "2f54d940",
+      "path": "com\\boxes\\scss\\_boxes.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "8d042552": {
+      "id": "8d042552",
+      "pid": "2f54d940",
+      "path": "com\\countdown\\scss\\_countdown.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "e7ca11bf": {
+      "id": "e7ca11bf",
+      "pid": "2f54d940",
+      "path": "css\\src\\breakpoints\\_base.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "892db765": {
+      "id": "892db765",
+      "pid": "2f54d940",
+      "path": "css\\src\\breakpoints\\_1240up.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "8a090391": {
+      "id": "8a090391",
+      "pid": "2f54d940",
+      "path": "css\\src\\breakpoints\\_2x.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "40d38205": {
+      "id": "40d38205",
+      "pid": "2f54d940",
+      "path": "css\\src\\partials\\_print.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "74946c78": {
+      "id": "74946c78",
+      "pid": "2f54d940",
+      "path": "com\\slider\\flexslider\\jquery.flexslider.js",
+      "parents": [
+        "049453ab"
+      ]
+    },
+    "1dc4e346": {
+      "id": "1dc4e346",
+      "pid": "2f54d940",
+      "path": "com\\slider\\flexslider\\flexslider.scss",
+      "parents": [
+        "16273c5c"
+      ]
+    },
+    "58f1a6d1": {
+      "id": "58f1a6d1",
+      "pid": "2f54d940",
+      "path": "com\\slider\\flexslider\\easing.js",
+      "parents": [
+        "049453ab"
+      ]
+    }
+  },
+  "images": {
+    "babed44f": {
+      "id": "babed44f",
+      "pid": "2f54d940",
+      "path": "img\\win8-tile-icon.png",
+      "size": 8048,
+      "name": "win8-tile-icon.png",
+      "type": "Png",
+      "initialSize": 8048,
+      "status": "NOT_OPTIMIZED"
+    },
+    "9b8d3965": {
+      "id": "9b8d3965",
+      "pid": "2f54d940",
+      "path": "img\\custom-post-icon.png",
+      "size": 462,
+      "name": "custom-post-icon.png",
+      "type": "Png",
+      "initialSize": 462,
+      "status": "NOT_OPTIMIZED"
+    },
+    "f23a72cc": {
+      "id": "f23a72cc",
+      "pid": "2f54d940",
+      "path": "img\\login-logo.png",
+      "size": 7019,
+      "name": "login-logo.png",
+      "type": "Png",
+      "initialSize": 7019,
+      "status": "NOT_OPTIMIZED"
+    },
+    "260b8f07": {
+      "id": "260b8f07",
+      "pid": "2f54d940",
+      "path": "img\\favicon.png",
+      "size": 1223,
+      "name": "favicon.png",
+      "type": "Png",
+      "initialSize": 1223,
+      "status": "NOT_OPTIMIZED"
+    },
+    "1cef567e": {
+      "id": "1cef567e",
+      "pid": "2f54d940",
+      "path": "img\\apple-icon-touch.png",
+      "size": 8439,
+      "name": "apple-icon-touch.png",
+      "type": "Png",
+      "initialSize": 8439,
+      "status": "NOT_OPTIMIZED"
+    },
+    "bc77a80d": {
+      "id": "bc77a80d",
+      "pid": "2f54d940",
+      "path": "screenshot.png",
+      "size": 52200,
+      "name": "screenshot.png",
+      "type": "Png",
+      "initialSize": 52200,
+      "status": "NOT_OPTIMIZED"
+    }
+  },
+  "config": {
+    "watch": false,
+    "liveRefresh": true,
+    "liveRefreshDelay": 0,
+    "filterPatterns": "_archive, font-awesome,slider",
+    "useCustomServer": false,
+    "customServerUrl": "",
+    "cssPath": "../",
+    "jsPath": "../",
+    "htmlPath": "html/",
+    "minJsPath": "../",
+    "htmlExtension": ".html",
+    "cssPathType": "RELATIVE_FILEDIR",
+    "htmlPathType": "REPLACE_TYPE",
+    "jsPathType": "RELATIVE_FILEDIR",
+    "minJsPathType": "RELATIVE_FILEDIR",
+    "htmlTypes": "jade, haml, slim, markdown, md",
+    "cssTypes": "less, sass, stylus, scss, styl",
+    "jsTypes": "coffee, coffeescript, coffeescripts, ls, livescript, livescripts",
+    "cssPreprocessorPath": "",
+    "htmlPreprocessorPath": "",
+    "jsPreprocessorPath": "",
+    "minJsPreprocessorPath": "",
+    "autoprefixerBrowsers": "",
+    "ftpHost": "",
+    "ftpPort": "21",
+    "ftpRemotePath": "",
+    "ftpIgnorePreprocessorFiles": true,
+    "ftpType": "FTP",
+    "ftpExcludePatterns": "",
+    "ftpPassword": "",
+    "ftpUsername": ""
+  }
+}

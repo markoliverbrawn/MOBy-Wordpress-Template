@@ -1,0 +1,245 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+
+
+/*********************
+TRANSITION
+*********************/
+
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+
+@mixin transition($transition...) {
+  // defining prefixes so we can use them in mixins below
+  $prefixes:      ("-webkit-", "" );
+  @each $prefix in $prefixes {
+    #{$prefix}transition: $transition;
+  }
+}
+
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+@mixin css-gradient-horizontal($from: #dfdfdf, $to: #f8f8f8, $start: 0%, $stop: 100%) {
+	/* fallback/image non-cover color */
+    background-color: $from;
+    /* Firefox 3.6+ */
+    background-image: -moz-linear-gradient(left, $from $start, $to $stop);
+    /* Safari 4+, Chrome 1+ */
+    background-image: -webkit-gradient(linear, left top, right top, color-stop($start, $from), color-stop($stop, $to));
+    /* Safari 5.1+, Chrome 10+ */
+    background-image: -webkit-linear-gradient(left, $from $start, $to $stop);
+    /* Opera 11.10+ */
+    background-image: -o-linear-gradient(left, $from $start, $to $stop);
+    /* IE10+ */
+    background: -ms-linear-gradient(left, $from $start, $to $stop);
+    /* Standard */
+    background: linear-gradient(to right, $from $start, $to $stop);
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+
+/*********************
+BOX SIZING
+*********************/
+
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing:    $type;
+	-ms-box-sizing:     $type;
+	box-sizing:         $type;
+}
+
+
+@mixin rotate($degrees:0){
+    /* Safari */
+    -webkit-transform: rotate($degrees);
+    /* Firefox */
+    -moz-transform: rotate($degrees);
+    /* IE */
+    -ms-transform: rotate($degrees);
+    /* Opera */
+    -o-transform: rotate($degrees);
+    /* Opera */
+    transform: rotate($degrees);
+    /* Internet Explorer
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); */
+}
+
+@mixin horizontal-dropdown-menu(){
+	.menu{
+		&>.menu-item-has-children{
+			&>a{
+				//@include font-icon-after($icon-play3);
+				&:after{
+					display: inline-block;
+					font-size:8px;  
+					opacity:0.5;
+				}
+			}
+			&:hover{ 
+				a:after{					
+					opacity:1;
+					-webkit-transform: rotate(-30deg);
+					-moz-transform: rotate(-30deg);
+					-o-transform: rotate(-30deg);
+					-ms-transform: rotate(-30deg);
+					transform: rotate(-30deg);
+				}
+			}
+		}
+		.sub-menu{
+			//display:none;
+			opacity:0;
+			position:absolute;
+			z-index:-1000;
+		}
+		.menu-item{
+			&:hover,&:active,&:focus{
+				&>.sub-menu{
+					//display:block;
+					opacity:1;
+					@include transition(opacity 0.25s ease-in);
+					z-index:1000;
+					.menu-item{
+						display:block;
+						float:none;
+					}
+				}
+			}
+			a{display:block;}
+		}
+	}
+}
+@mixin vertical-menu($bg:#e0e0e0, $percent:10%){
+    background:$bg;
+    ul{
+        background:rgba(darken($bg, $percent),10%);
+    }
+    li{
+        &>a{
+            display:block;
+            padding:0.5em;
+            text-decoration:none;
+            &:hover{
+                background:rgba(#fff, 0.5);
+            }
+        }
+        &>ul{            
+            background:rgba(darken($bg, $percent),10%);
+            display:none;
+        }
+        &.current_page_item, &.current_page_ancestor{
+            &>ul{
+                display:block;
+            }
+        }
+    }
+}
+@mixin magazine-layout($bodyClass, $border-radius:0){
+	body{
+		&.#{$bodyClass}{
+			article{
+				margin-bottom:1em;
+				.article-thumb{
+					clear:right;
+					display:block;
+					float:right;
+					margin:0 1em 1em 0;
+					img{
+						border-radius:$border-radius;
+					}
+				}
+				header{
+					h1,h2,p{margin:0;}
+				}
+				section{
+					p{margin-top:0;}
+				}
+				@media only screen and (min-width: 768px) {
+					.article-thumb{
+						clear:left;
+						float:left;
+					}
+					header,section{display:block;margin-left:170px;}
+				}
+				@media only screen and (min-width: 1030px) {
+					@include grid(1/2);
+					font-size:0.8em;
+					.article-thumb{
+						img{
+							height:auto;
+							width:100px;
+						}
+					}
+					header,section{
+						display:block;
+						margin-left:120px;
+					}
+					&:nth-of-type(2n+1){
+						@include row();
+					}
+					&:nth-of-type(1),&:nth-of-type(2){
+						font-size:1em;
+						width:100%;
+						.article-thumb{
+							img{
+								width:150px;
+							}
+						}
+						header,section{
+							display:block;
+							margin-left:170px;
+						}
+					}
+					header:first-child,section:nth-child(2){margin-left:0!important;}
+				}
+			}
+		}
+	}
+}
+
+@mixin font-awesome($icon){
+  	@extend .#{$icon};
+  	&:before{
+  		@include fa-icon();
+	}
+}

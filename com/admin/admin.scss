@@ -1,0 +1,173 @@
+@import "../../fonts/icomoon/icomoon";
+@import "../../css/src/salsa/salsa"; 
+
+#menu-posts-mob_slider{ 
+	.wp-menu-image{
+		&.dashicons-before{
+			@include font-icon($icon-images,'',16px);
+			img{visibility:hidden;}
+		}
+	}
+}
+#menu-posts-mob_boxes{ 
+	.wp-menu-image{
+		&.dashicons-before{
+			@include font-icon($icon-profile,'',16px);
+			img{visibility:hidden;}
+		}
+	}
+}
+#helpframe{
+	display:block;
+	width:100%;
+}
+
+.icon{
+	&.icon-checkmark{@include font-icon($icon-checkmark);}
+	&.icon-cross{@include font-icon($icon-remove);}
+	vertic-align:middle;
+}
+
+$red: #e74c3c;
+$dark_red: #c0392b;
+$blue: #3498db;
+$dark_blue: #2980b9;
+$green: #2ecc71;
+$dark_green: darken($green,10%);
+
+body.appearance_page_mob_options{ 
+    #tabs{
+        *{box-sizing:border-box;}
+        .ui-widget-header,&.ui-widget-content,.has-tabs{
+            background:none;
+            border:none;
+            border-radius:0;
+            .has-tabs{padding:0;}
+        }
+        .ui-tabs-nav{
+            @include container();
+            //border-bottom:3px solid $red;
+            border-radius:0;
+            padding-left:0;
+            padding-right:0;
+            width:100%;
+            li{
+                border-radius:0;
+                margin:0;
+                outline:0;
+                padding:0;
+                @include grid(1/4);
+                a{
+                    box-shadow:none;
+                    color:#fff;
+                    display:block;
+                    float:none;
+                    padding:0.5em;
+                    text-align:center;
+                    &:before{font-size:16px;}
+                    &:after{
+                        border: 0.75em solid transparent;
+                        content: "";
+                        left:46%;
+                        margin-top:0.7em;
+                        position:absolute;
+                        z-index:1;
+                    }
+                }
+                &.ui-state-default,&.ui-state-active{
+                    border:none;
+                }
+                &.ui-state-default{
+                    background:$dark_red;
+                }
+                &.ui-state-active{
+                    background:$red;
+                    font-weight:bold;
+                    a:after{
+                        border-bottom-color: #f1f1f1;
+                    }
+                }
+            }
+        }
+        .ui-tabs-panel{
+            padding:0;
+            .ui-tabs-nav{
+                .ui-state-default{
+                    background:$dark_blue;
+                }
+                .ui-state-active{
+                    background:$blue;
+                }
+            }
+            .ui-tabs-panel{
+                .ui-tabs-nav{
+                    .ui-state-default{
+                        background:$dark_green;
+                    }
+                    .ui-state-active{
+                        background:$green;
+                    }
+                }
+            }
+        }
+        #tabnav_general a{@include font-icon($icon-settings);}
+        #tabnav_scss a{@include font-icon($icon-quill);}
+        #tabnav_help a{@include font-icon($icon-support);}
+        #tabnav_js a{@include font-icon($icon-code);}
+        #mob_opts_scss >{
+            .ui-tabs-nav li{@include grid(1/4);}
+            :nth-child(1) a{@include font-icon($icon-mobile);}
+            :nth-child(2) a{@include font-icon($icon-tablet);}
+            :nth-child(3) a{@include font-icon($icon-laptop);}
+            :nth-child(4) a{@include font-icon($icon-screen);}
+        }
+        #mob_opts_general >{
+            .ui-tabs-nav li{@include grid(1/2);}
+            :nth-child(1) a{@include font-icon($icon-insert-template);}
+            :nth-child(2) a{@include font-icon($icon-calendar2);} 
+        }
+        #mob_opts_help{
+            & >.ui-tabs-nav{
+                li{
+                    @include grid(1/5);
+                    &:nth-child(1) a{@include font-icon($icon-quill);}
+                    &:nth-child(2) a{@include font-icon($icon-profile);}
+                    &:nth-child(3) a{@include font-icon($icon-images);}
+                    &:nth-child(4) a{@include font-icon($icon-screen);}
+                    &:nth-child(5) a{@include font-icon($icon-code);}
+                }
+            }
+            h5{
+                background:silver;
+                font-size:1.5em;
+                font-weight:normal;
+                line-height:1.5em;
+                margin:1em 0;
+                padding:0 0.25em;
+            }
+            h6{
+                font-size:1em;
+                margin:1em 0;
+            }
+            ul.parameters{
+                list-style:square;
+                padding-left:2em;
+            }
+            blockquote{margin:0 2em;}
+            .sass-reference{
+                .ui-tabs-nav{
+                    li{
+                        @include grid(1/2);
+                        &:nth-child(1) a{@include font-icon($icon-lab);}
+                        &:nth-child(2) a{@include font-icon($icon-fire);}
+                    }
+                }
+            }
+        }
+
+
+        .form-table{
+            margin:0 1em;
+        }
+    }
+}
