@@ -1,6 +1,6 @@
 <?php
 define('MOB_NS','mob');
-define('MOB_DEFAULT_META_TEMPLATE', 'Posted [date] [time] by [user] under [cats] [tags]');
+define('MOB_DEFAULT_META_TEMPLATE', 'Posted [date] [time] by [user]. Filed under [cats]. Tagged as [tags]');
 
 if ( ! isset( $content_width ) )
 {
@@ -186,48 +186,6 @@ function mob_cleanup_remove_wp_ver_css_js($src)
 	return $src;
 }
 /**
- * A helpful function for getting a spot colour of an image
- *
- * @param string $src
- * @param integer $quadrant 1=top-left, 2=top-right, 3=bottom-right, 4=bottom-left, 0=full-image
- * @param float $opacity
- *
- * @return string
- */
-function moby_get_spot_color($src, $quadrant=0, $opacity=0.75)
-{
-    $path = str_replace('http://'.$_SERVER['HTTP_HOST'].'/', ABSPATH, $src);
-    list($width, $height) = getimagesize($path);
-    $src = imagecreatefromjpeg($path);
-    $dst = imagecreatetruecolor(1, 1);
-
-    switch($quadrant)
-    {
-        case 1:
-            $x0 = 0;$w = $width/2;$y0 = 0;$h = $height/2;break;
-        case 2:
-            $x0 = $width/2;$w = $width/2;$y0 = 0;$h = $height/2;break;
-        case 3:
-            $x0 = $width/2;$w = $width/2;$y0 = $height/2;$h = $height/2;break;
-        case 4:
-            $x0 = 0;$w = $width/2;$y0 = $height/2;$h = $height/2;break;
-        default:
-            $x0 = 0;$w = $width;$y0 = 0;$h = $height;break;
-    }
-    
-    imagecopyresampled($dst, $src, 0, 0, $x0, $y0, 1, 1, $w, $h);
-    
-    $rgb = imagecolorat($dst, 0, 0);
-    $r = ($rgb >> 16) & 0xFF;
-    $g = ($rgb >> 8) & 0xFF;
-    $b = $rgb & 0xFF;
-    
-    imagedestroy($src);
-    imagedestroy($dst);
-    
-    return "rgba($r, $g, $b, $opacity)";
-}
-/**
  * Log debug messages
  * 
  * @param mixed $message
@@ -270,13 +228,6 @@ function mob_file_write($filename, $content)
 	// by this point, the $wp_filesystem global should be working, so let's use it to create a file
 	global $wp_filesystem;
 	
-    if(file_exists($filename))
-    {
-        // Make a backup
-        $newfile = preg_replace('/(\.[a-z]+$)/','-'.date('YmdHis').'$1', $filename);
-        copy($filename, $newfile);
-        system('gzip '.$newfile);
-    }
 	return @$wp_filesystem->put_contents($filename,$content, FS_CHMOD_FILE);
 	
 	//return file_put_contents($filename, $content);
@@ -312,8 +263,7 @@ function mob_get_assets_directory($key='basedir')
 	foreach(array('url','baseurl') as $k)
 	{
 		$parse_url = parse_url($upload_dir[$k]);
-		
-		if(!defined('SUBDOMAIN_INSTALL') && $k=='baseurl')
+		if(!SUBDOMAIN_INSTALL && $k=='baseurl')
 		{
 			$upload_dir[$k] = $parse_url['scheme'].'://'.$parse_url['host'].$parse_url['path'];
 		}
@@ -502,7 +452,7 @@ function mob_scripts_and_styles() {
 	if (!is_admin()) 
 	{
 		// modernizr (without media query polyfill)
-		wp_register_script(MOB_NS.'-modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', array('jquery'), '2.5.3', false );
+		wp_register_script(MOB_NS.'-modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
 		wp_register_style(MOB_NS.'-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
@@ -516,12 +466,12 @@ function mob_scripts_and_styles() {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
+		wp_enqueue_script('jquery');
 		//adding scripts file in the footer
-		//wp_enqueue_script('jquery');
 		wp_register_script(MOB_NS.'-js', get_stylesheet_directory_uri() . '/js/scripts.min.js', array('jquery'), '', false);
 
+		
 		// enqueue styles and scripts
-		//wp_enqueue_script('jquery');
 		wp_enqueue_script(MOB_NS.'-js' );
 		wp_enqueue_script(MOB_NS.'-modernizr' );
 		wp_enqueue_style(MOB_NS.'-stylesheet' );

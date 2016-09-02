@@ -22,8 +22,8 @@ if(!$wrapperclass)
 			<h1><?php printf(__('Tag: %s', MOB_NS), single_tag_title('', false)); ?></h1>
 		</header>
 	<?php endif;?>
-	<?php while (have_posts()) : the_post();?>
-        <?php get_template_part('content','article');?>
+	<?php while (have_posts()) : the_post(); ?>
+		<?php get_template_part('content','article');?>
 	<?php endwhile;?> 
 	<?php if(1 || is_search()) mob_page_navi();?>
 <?php elseif(is_404()) : ?>

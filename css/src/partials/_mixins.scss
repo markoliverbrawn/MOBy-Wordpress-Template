@@ -89,40 +89,26 @@ probably best not to use it. I mean, were you going to anyway? */
 }
 
 
-@mixin rotate($degrees:0){
-    /* Safari */
-    -webkit-transform: rotate($degrees);
-    /* Firefox */
-    -moz-transform: rotate($degrees);
-    /* IE */
-    -ms-transform: rotate($degrees);
-    /* Opera */
-    -o-transform: rotate($degrees);
-    /* Opera */
-    transform: rotate($degrees);
-    /* Internet Explorer
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); */
-}
 
 @mixin horizontal-dropdown-menu(){
-	.menu{
+	.menu{		
 		&>.menu-item-has-children{
 			&>a{
 				//@include font-icon-after($icon-play3);
 				&:after{
 					display: inline-block;
-					font-size:8px;  
-					opacity:0.5;
+					font-size:8px;
+					opacity:0.75;
 				}
 			}
-			&:hover{ 
+			&:hover{
 				a:after{					
 					opacity:1;
-					-webkit-transform: rotate(-30deg);
+					/*-webkit-transform: rotate(-30deg);
 					-moz-transform: rotate(-30deg);
 					-o-transform: rotate(-30deg);
 					-ms-transform: rotate(-30deg);
-					transform: rotate(-30deg);
+					transform: rotate(-30deg);*/
 				}
 			}
 		}
@@ -149,34 +135,9 @@ probably best not to use it. I mean, were you going to anyway? */
 		}
 	}
 }
-@mixin vertical-menu($bg:#e0e0e0, $percent:10%){
-    background:$bg;
-    ul{
-        background:rgba(darken($bg, $percent),10%);
-    }
-    li{
-        &>a{
-            display:block;
-            padding:0.5em;
-            text-decoration:none;
-            &:hover{
-                background:rgba(#fff, 0.5);
-            }
-        }
-        &>ul{            
-            background:rgba(darken($bg, $percent),10%);
-            display:none;
-        }
-        &.current_page_item, &.current_page_ancestor{
-            &>ul{
-                display:block;
-            }
-        }
-    }
-}
-@mixin magazine-layout($bodyClass, $border-radius:0){
+@mixin magazine-layout(){
 	body{
-		&.#{$bodyClass}{
+		&.search,&.blog,&.archive{
 			article{
 				margin-bottom:1em;
 				.article-thumb{
@@ -185,7 +146,7 @@ probably best not to use it. I mean, were you going to anyway? */
 					float:right;
 					margin:0 1em 1em 0;
 					img{
-						border-radius:$border-radius;
+						border-radius:10em;
 					}
 				}
 				header{
@@ -214,10 +175,10 @@ probably best not to use it. I mean, were you going to anyway? */
 						display:block;
 						margin-left:120px;
 					}
-					&:nth-of-type(2n+1){
+					&:nth-child(2n+1){
 						@include row();
 					}
-					&:nth-of-type(1),&:nth-of-type(2){
+					&:nth-child(1),&:nth-child(2){
 						font-size:1em;
 						width:100%;
 						.article-thumb{
@@ -234,12 +195,5 @@ probably best not to use it. I mean, were you going to anyway? */
 				}
 			}
 		}
-	}
-}
-
-@mixin font-awesome($icon){
-  	@extend .#{$icon};
-  	&:before{
-  		@include fa-icon();
 	}
 }

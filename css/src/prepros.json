@@ -1,0 +1,312 @@
+{
+  "id": "3ec0c8df",
+  "cfgVersion": 1,
+  "name": "MOBy Bones on Gazelle",
+  "files": {
+    "6e8f98dd": {
+      "id": "6e8f98dd",
+      "pid": "3ec0c8df",
+      "name": "ie.scss",
+      "input": "ie.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "expanded",
+        "autoprefixer": false
+      }
+    },
+    "2a6b6a26": {
+      "id": "2a6b6a26",
+      "pid": "3ec0c8df",
+      "name": "login.scss",
+      "input": "login.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "expanded",
+        "autoprefixer": false
+      }
+    },
+    "a8034bad": {
+      "id": "a8034bad",
+      "pid": "3ec0c8df",
+      "name": "style.scss",
+      "input": "style.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "compressed",
+        "autoprefixer": false
+      }
+    },
+    "6d2f2b82": {
+      "id": "6d2f2b82",
+      "pid": "3ec0c8df",
+      "name": "editor-style.scss",
+      "input": "editor-style.scss",
+      "customOutput": false,
+      "type": "Scss",
+      "config": {
+        "autoCompile": true,
+        "lineNumbers": false,
+        "unixNewlines": false,
+        "sourcemaps": false,
+        "debug": false,
+        "compass": false,
+        "fullCompass": false,
+        "outputStyle": "expanded",
+        "autoprefixer": false
+      }
+    }
+  },
+  "imports": {
+    "682634c1": {
+      "id": "682634c1",
+      "pid": "3ec0c8df",
+      "path": "partials\\_normalize.scss",
+      "parents": [
+        "6d2f2b82",
+        "a8034bad"
+      ]
+    },
+    "61b723ca": {
+      "id": "61b723ca",
+      "pid": "3ec0c8df",
+      "path": "partials\\_typography.scss",
+      "parents": [
+        "6d2f2b82",
+        "6e8f98dd",
+        "a8034bad"
+      ]
+    },
+    "0ed17837": {
+      "id": "0ed17837",
+      "pid": "3ec0c8df",
+      "path": "partials\\_functions.scss",
+      "parents": [
+        "6d2f2b82",
+        "a8034bad"
+      ]
+    },
+    "9f8606bb": {
+      "id": "9f8606bb",
+      "pid": "3ec0c8df",
+      "path": "partials\\_mixins.scss",
+      "parents": [
+        "6d2f2b82",
+        "6e8f98dd",
+        "a8034bad"
+      ]
+    },
+    "bc32dc4e": {
+      "id": "bc32dc4e",
+      "pid": "3ec0c8df",
+      "path": "breakpoints\\_481up.scss",
+      "parents": [
+        "6e8f98dd",
+        "a8034bad"
+      ]
+    },
+    "1acaba56": {
+      "id": "1acaba56",
+      "pid": "3ec0c8df",
+      "path": "breakpoints\\_768up.scss",
+      "parents": [
+        "6e8f98dd",
+        "a8034bad"
+      ]
+    },
+    "40af340a": {
+      "id": "40af340a",
+      "pid": "3ec0c8df",
+      "path": "breakpoints\\_1030up.scss",
+      "parents": [
+        "6e8f98dd",
+        "a8034bad"
+      ]
+    },
+    "c251807c": {
+      "id": "c251807c",
+      "pid": "3ec0c8df",
+      "path": "modules\\_alerts.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "2f6aa82d": {
+      "id": "2f6aa82d",
+      "pid": "3ec0c8df",
+      "path": "modules\\_buttons.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "86ab40f5": {
+      "id": "86ab40f5",
+      "pid": "3ec0c8df",
+      "path": "modules\\_forms.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "cd097b19": {
+      "id": "cd097b19",
+      "pid": "3ec0c8df",
+      "path": "modules\\_galleries.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "dc2fbbec": {
+      "id": "dc2fbbec",
+      "pid": "3ec0c8df",
+      "path": "breakpoints\\_base.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "83cb312f": {
+      "id": "83cb312f",
+      "pid": "3ec0c8df",
+      "path": "breakpoints\\_1240up.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "62ba664e": {
+      "id": "62ba664e",
+      "pid": "3ec0c8df",
+      "path": "breakpoints\\_2x.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "c72d0d79": {
+      "id": "c72d0d79",
+      "pid": "3ec0c8df",
+      "path": "partials\\_print.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "14b95b5c": {
+      "id": "14b95b5c",
+      "pid": "3ec0c8df",
+      "path": "salsa\\_salsa.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "2a1850c0": {
+      "id": "2a1850c0",
+      "pid": "3ec0c8df",
+      "path": "salsa\\salsa\\_functions.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "15f3570e": {
+      "id": "15f3570e",
+      "pid": "3ec0c8df",
+      "path": "salsa\\salsa\\_settings.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "ef4471aa": {
+      "id": "ef4471aa",
+      "pid": "3ec0c8df",
+      "path": "salsa\\salsa\\_system.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "550048e5": {
+      "id": "550048e5",
+      "pid": "3ec0c8df",
+      "path": "salsa\\salsa\\_background.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "2c54f43d": {
+      "id": "2c54f43d",
+      "pid": "3ec0c8df",
+      "path": "modules\\_pagenavi.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "c84b68fd": {
+      "id": "c84b68fd",
+      "pid": "3ec0c8df",
+      "path": "..\\..\\com\\boxes\\scss\\_boxes.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    },
+    "838ec93d": {
+      "id": "838ec93d",
+      "pid": "3ec0c8df",
+      "path": "..\\..\\com\\countdown\\scss\\_countdown.scss",
+      "parents": [
+        "a8034bad"
+      ]
+    }
+  },
+  "images": {},
+  "config": {
+    "watch": true,
+    "liveRefresh": true,
+    "liveRefreshDelay": 0,
+    "filterPatterns": "",
+    "useCustomServer": false,
+    "customServerUrl": "",
+    "cssPath": "../",
+    "jsPath": "../",
+    "htmlPath": "html/",
+    "minJsPath": "../",
+    "htmlExtension": ".html",
+    "cssPathType": "RELATIVE_FILEDIR",
+    "htmlPathType": "REPLACE_TYPE",
+    "jsPathType": "RELATIVE_FILEDIR",
+    "minJsPathType": "RELATIVE_FILEDIR",
+    "htmlTypes": "jade, haml, slim, markdown, md",
+    "cssTypes": "less, sass, stylus, scss, styl",
+    "jsTypes": "coffee, coffeescript, coffeescripts, ls, livescript, livescripts",
+    "cssPreprocessorPath": "",
+    "htmlPreprocessorPath": "",
+    "jsPreprocessorPath": "",
+    "minJsPreprocessorPath": "",
+    "autoprefixerBrowsers": "",
+    "ftpHost": "",
+    "ftpPort": "21",
+    "ftpRemotePath": "",
+    "ftpIgnorePreprocessorFiles": true,
+    "ftpType": "FTP",
+    "ftpExcludePatterns": "",
+    "ftpPassword": "",
+    "ftpUsername": ""
+  }
+}

@@ -37,7 +37,7 @@ header,footer{
  * Grid
  * =======================================================
  */
-.sb{@include grid(1/4);}
+.sb{@include grid(1/5);}
 .sb0{@include grid(100%);}
-.sb1{@include grid(3/4);}
-.sb2{@include grid(1/2);}
+.sb1{@include grid(4/5);}
+.sb2{@include grid(3/5);}

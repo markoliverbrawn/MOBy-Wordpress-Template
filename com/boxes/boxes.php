@@ -1,10 +1,10 @@
 <?php
 /**
  * Meta box setup function.
- *
+ * 
  *  @return void
  */
-function mob_boxes_meta_boxes_setup()
+function mob_boxes_meta_boxes_setup() 
 {
   // Add meta boxes on the 'add_meta_boxes' hook.
   add_action('add_meta_boxes', 'mob_boxes_meta_add');
@@ -15,7 +15,7 @@ add_action('load-post.php', 'mob_boxes_meta_boxes_setup' );
 add_action('load-post-new.php', 'mob_boxes_meta_boxes_setup' );
 /**
  * Create one or more meta boxes to be displayed on the post editor screen.
- *
+ * 
  * @return void
  */
 function mob_boxes_meta_add() {
@@ -30,32 +30,32 @@ function mob_boxes_meta_add() {
   );
 }
 /**
- * Display the post meta box.
- *
+ * Display the post meta box. 
+ * 
  * @param object $object
  * @param object $box
- *
+ * 
  * @return void
  */
-function mob_boxes_meta_box_url( $object, $box )
-{
+function mob_boxes_meta_box_url( $object, $box ) 
+{ 
 	wp_nonce_field(basename(__FILE__), 'mob_boxes_url_nonce' ); ?>
   	<p>
 		<label for="mob_boxes_url"><?php _e( "Link URL", MOB_NS); ?></label>
 		<br />
 		<input class="widefat" type="text" name="mob_boxes_url" id="mob_boxes_url" value="<?php echo esc_attr( get_post_meta( $object->ID, 'mob_boxes_url', true ) ); ?>" size="30" />
 	</p>
-<?php
+<?php 
 }
 /**
- * Save the meta box's post metadata.
- *
+ * Save the meta box's post metadata. 
+ * 
  * @param integer $post_id
  * @param array   $post
- *
+ * 
  * @return integer
  */
-function mob_boxes_meta_save_url($post_id, $post)
+function mob_boxes_meta_save_url($post_id, $post) 
 {
 	// Verify the nonce before proceeding.
   	if(!isset($_POST['mob_boxes_url_nonce']) || !wp_verify_nonce($_POST['mob_boxes_url_nonce'], basename(__FILE__))) return $post_id;
@@ -87,11 +87,11 @@ function mob_boxes_meta_save_url($post_id, $post)
 add_action('save_post', 'mob_boxes_meta_save_url', 10, 2 );
 /**
  * function for the custom type
- *
+ * 
  * @return void
  */
-function mob_boxes() {
-	// creating (registering) the custom type
+function mob_boxes() { 
+	// creating (registering) the custom type 
 	register_post_type( 'mob_boxes', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 		// let's now add all the options for this post type
 		array( 'labels' => array(
@@ -104,8 +104,8 @@ function mob_boxes() {
 			'edit_item' => __( 'Edit Box', 'bonestheme' ), /* Edit Display Title */
 			'new_item' => __( 'New Box', 'bonestheme' ), /* New Display Title */
 			'view_item' => __( 'View Box', 'bonestheme' ), /* View Display Title */
-			'search_items' => __( 'Search Boxes', 'bonestheme' ), /* Search Custom Type Title */
-			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */
+			'search_items' => __( 'Search Boxes', 'bonestheme' ), /* Search Custom Type Title */ 
+			'not_found' =>  __( 'Nothing found in the Database.', 'bonestheme' ), /* This displays if there are no entries yet */ 
 			'not_found_in_trash' => __( 'Nothing found in Trash', 'bonestheme' ), /* This displays if there is nothing in the trash */
 			'parent_item_colon' => ''
 			), /* end of arrays */
@@ -115,43 +115,43 @@ function mob_boxes() {
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
-			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */
+			'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
 			//'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-icon.png', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'box', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'box', /* you can rename the slug here */
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array(
-				'title',
-				'editor',
-				//'author',
-				'thumbnail',
-				//'excerpt',
-				//'trackbacks', 'custom-fields', 'comments',
-				'revisions',
+			'supports' => array( 
+				'title', 
+				'editor', 
+				//'author', 
+				'thumbnail', 
+				//'excerpt', 
+				//'trackbacks', 'custom-fields', 'comments', 
+				'revisions', 
 				'sticky'
 			)
 		) /* end of options */
 	); /* end of register post type */
-
+	
 	/* this adds your post categories to your custom post type */
 	register_taxonomy_for_object_type( 'category', 'boxes' );
-
+	
 	add_image_size( 'mob_box_image', 400, 300, true);
-
+	
 }
 
 	// adding the function to the Wordpress init
 	add_action( 'init', 'mob_boxes');
-
+	
 	/*
 	for more information on taxonomies, go here:
 	http://codex.wordpress.org/Function_Reference/register_taxonomy
 	*/
-
+	
 	// now let's add custom categories (these act like categories)
-	register_taxonomy( 'boxes_cat',
+	register_taxonomy( 'boxes_cat', 
 		array('mob_boxes'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 		array('hierarchical' => true,     /* if this is true, it acts like categories */
 			'labels' => array(
@@ -166,19 +166,19 @@ function mob_boxes() {
 				'add_new_item' => __( 'Add New Box Category', 'bonestheme' ), /* add new title for taxonomy */
 				'new_item_name' => __( 'New Box Category Name', 'bonestheme' ) /* name title for taxonomy */
 			),
-			'show_admin_column' => true,
+			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
 			'rewrite' => array( 'slug' => 'box' ),
 		)
 	);
-
+	
 	/*
 		looking for custom meta boxes?
 		check out this fantastic tool:
 		https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
 	*/
-
+	
 /*
 // Extra by Mark
 add_filter('manage_posts_columns', 'posts_columns', 5);
@@ -199,20 +199,20 @@ function mob_bones_shortcode_boxes($atts)
         'category' => '',
 		'count' => 1,
 		'columns' => 1,
-        'order' => 'rand',
-        'moretext'=>'More...'
+		'image_height'=>250,
+        'order' => 'rand'
     ), $atts );
 	$return = '';
-
+	
 	//print_r($a);
-
+	
 	if($posts = get_posts( 'post_type=mob_boxes'.($a['count']?'&posts_per_page='.$a['count']:'').($a['category']?'&boxes_cat='.$a['category']:'').($a['order']?'&order='.$a['order']:'')))
 	{
 		$return = '<div class="boxes boxes-columns-'.$a['columns'].'"><ul>';
 		foreach($posts as $post)
 		{
 			$link_start = $link_end = '';
-			$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'mob_box_image');//);//'mob_box_image' );
+			$thumb = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'medium');//);//'mob_box_image' );
 			$url = $thumb['0'];
 			$link = get_post_meta($post->ID, 'mob_boxes_url');
 			if(isset($link[0]))
@@ -221,12 +221,13 @@ function mob_bones_shortcode_boxes($atts)
 				$link_end = '</a>';
 			}
 			$return.= '<li id="box-'.$post->ID.'" class="boxes-item">';
+			$return.= $link_start;
 			if($url)
 			{
-				$return.= $link_start.'<div class="image" style="background:url('.$url.') no-repeat;background-size:cover;" title="'.esc_attr($post->post_title).' image"></div>'.$link_end;
+				$return.= '<div class="image" style="background:url('.$url.') 50% 50%;background-size:cover;height:'.$a['image_height'].'px" alt="slide" title="'.esc_attr($post->post_title).' image"></div>';
 			}
-            $return.= '<i></i>';
-			$return.= '<h2>'.$link_start.$post->post_title.$link_end.'</h2><div class="content">'.$post->post_content.'</div>'.($link_start ? ' '.$link_start.$a['moretext'].$link_end : '');
+			$return.= '<h2>'.$post->post_title.'</h2><div class="content">'.$post->post_content.'</div>';
+			$return.= $link_end;
 			$return.= '</li>';
 		}
 		$return.= '</ul></div>';

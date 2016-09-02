@@ -1,6 +1,6 @@
 /*
 Error: File to import not found or unreadable: partials/ie_grid.
-        on line 26 of S:\orangeleaf\wolves\wordpress\wp-content\themes\moby\css\src\ie.scss
+        on line 26 of S:\orangeleaf\ipmd\wordpress\wp-content\themes\moby\css\src\ie.scss
 
 21: ******************************************************************\/
 22: 
@@ -15,7 +15,7 @@ Error: File to import not found or unreadable: partials/ie_grid.
 31: @import "breakpoints/1030up";
 
 Backtrace:
-S:\orangeleaf\wolves\wordpress\wp-content\themes\moby\css\src\ie.scss:26
+S:\orangeleaf\ipmd\wordpress\wp-content\themes\moby\css\src\ie.scss:26
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:67:in `rescue in import'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:45:in `import'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -46,11 +46,11 @@ C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/sass_scss.rb:40
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/sass_scss.rb:63:in `process_result'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/base.rb:52:in `parse'
 C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/bin/sass:13:in `<top (required)>'
-C:/Ruby22-x64/bin/sass:23:in `load'
-C:/Ruby22-x64/bin/sass:23:in `<main>'
+C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.14/bin/scss:13:in `<top (required)>'
+C:/Ruby22-x64/bin/scss:23:in `load'
+C:/Ruby22-x64/bin/scss:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: partials/ie_grid.\A         on line 26 of S:\orangeleaf\wolves\wordpress\wp-content\themes\moby\css\src\ie.scss\A \A 21: ******************************************************************/\A 22: \A 23: //@import \"partials/variables\"; // import variables\A 24: //@import \"partials/typography\"; // import typography\A 25: @import \"partials/mixins\"; // import mixins\A 26: @import \"partials/ie_grid\"; // import grid\A 27: \A 28: // import everything inside media queries\A 29: @import \"breakpoints/481up\";\A 30: @import \"breakpoints/768up\";\A 31: @import \"breakpoints/1030up\";"; }
+  content: "Error: File to import not found or unreadable: partials/ie_grid.\A         on line 26 of S:\orangeleaf\ipmd\wordpress\wp-content\themes\moby\css\src\ie.scss\A \A 21: ******************************************************************/\A 22: \A 23: //@import \"partials/variables\"; // import variables\A 24: //@import \"partials/typography\"; // import typography\A 25: @import \"partials/mixins\"; // import mixins\A 26: @import \"partials/ie_grid\"; // import grid\A 27: \A 28: // import everything inside media queries\A 29: @import \"breakpoints/481up\";\A 30: @import \"breakpoints/768up\";\A 31: @import \"breakpoints/1030up\";"; }

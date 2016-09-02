@@ -1,0 +1,2 @@
+[20-Aug-2016 18:44:08 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/wp2whitelev/public_html/wp-content/themes/moby/index.php on line 1
+[24-Aug-2016 16:09:58 UTC] PHP Fatal error:  Call to undefined function get_header() in /home/wp2whitelev/public_html/wp-content/themes/moby/index.php on line 1

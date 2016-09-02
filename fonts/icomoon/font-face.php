@@ -1,5 +1,5 @@
 <?php
-$host = 'http'.(@$_SERVER['HTTPS']?'s':'').'://'.$_SERVER['HTTP_HOST'];
+$host = 'http'.($_SERVER['HTTPS']?'s':'').'://'.$_SERVER['HTTP_HOST'];
 header('Content-type:text/css');
 ?>
 @font-face {

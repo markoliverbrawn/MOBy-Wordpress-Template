@@ -150,7 +150,7 @@ function mob_slider()
 	/* this adds your post tags to your custom post type */
 	//register_taxonomy_for_object_type( 'post_tag', 'slider' );
 	
-	add_image_size( 'mob_slider_image', 1600, 500, true);
+	add_image_size( 'mob_slider_image', 1300, 800, true);
 	
 }
 add_action('init', 'mob_slider');
@@ -180,57 +180,36 @@ register_taxonomy( 'slider_cat',
 );
 function mob_shortcode_slider($atts)
 {
-	global $post;
 	$a = shortcode_atts( array(
         'category' => '',
-        'height'=>400,
         'order' => 'rand',
 		'showon' => '',
 		'animation'=>'fade',
 		'animation-speed'=>1000,
 		'slideshow-speed'=>7000,
-        'directionnav'=>false,
-        'controlnav'=>true,
-        'thumbsize'=>'mob_slider_image',
-		'bg_h2'=>null,
-		'bg_content'=>null,
-		'count'=>10
+		'height'=>400
     ), $atts );
 	$return = '';
 	$a['showon'] = explode(',', $a['showon']);
 	
 	if(
-		!empty($a['showon']) && 
 		(
-			(
-				is_home() && !in_array('home',$a['showon'])
-			) 
-			|| 
-			(
-				!is_home() && !in_array($post->ID, $a['showon'])
-			)
+			in_array('home',$a['showon']) && !is_home()
 		)
 	)
 	{
-	
 		return '';
 	}
 	
-	if($posts = get_posts( 'posts_per_page='.$a['count'].'&post_type=mob_slider'.($a['category']?'&slider_cat='.$a['category']:'').($a['order']?'&order='.$a['order']:'')))
+	if($posts = get_posts( 'post_type=mob_slider'.($a['category']?'&slider_cat='.$a['category']:'').($a['order']?'&order='.$a['order']:'')))
 	{
-		$return = '<div class="flexslider" style="height:'.$a['height'].'px;" data-animation="'.$a['animation'].'" data-control-nav="'.($a['controlnav']===true?'true':'false').'" data-direction-nav="'.($a['directionnav']?'true':'false').'" data-slideshow-speed="'.$a['slideshow-speed'].'" data-animation-speed="'.$a['animation-speed'].'"><ul class="slides">';
+		$return = '<div class="flexslider" data-animation="'.$a['animation'].'" data-slideshow-speed="'.$a['slideshow-speed'].'" data-animation-speed="'.$a['animation-speed'].'"><ul class="slides">';
 		foreach($posts as $post)
 		{
 			$link = get_post_meta($post->ID, 'mob_slider_url', true);
 			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'mob_slider_image' );
 			$url = $thumb['0'];
-			$return.= '<li id="slide-'.$post->ID.'" style="background-image:url(\''.$url.'\');'.($link?'cursor:pointer;':'').'height:'.$a['height'].'px;"'.($link?' onclick="window.location.href=\''.$link.'\'"':'').'>';
-			$return.= '<h2'.($a['bg_h2']!==null?' style="background:'.moby_get_spot_color($url, $a['bg_h2']).'"':'').'>'.$post->post_title.'</h2>';
-			if($post->post_content)
-			{
-				$return.= '<div class="content"'.($a['bg_content']!==null?' style="background:'.moby_get_spot_color($url, $a['bg_content']).'"':'').'>'.$post->post_content.'</div>';
-			}
-			$return.= '</li>';
+			$return.= '<li id="slide-'.$post->ID.'" style="background-image:url(\''.$url.'\');'.($link?'cursor:pointer;':'').'height:'.$a['height'].'px;"'.($link?' onclick="window.location.href=\''.$link.'\'"':'').'><h2>'.$post->post_title.'</h2><div class="content">'.$post->post_content.'</div></li>';
 		}
 		$return.= '</ul></div>';
 	}

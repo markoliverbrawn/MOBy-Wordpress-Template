@@ -11,10 +11,9 @@ extra styles on that same mobile connection.
  * Grid
  * =======================================================
  */
-.sb{@include grid(1/3);}
+.sb{@include grid(1/5);}
 .sb0{@include grid(100%);}
-.sb1{@include grid(2/3);}
-.sb2{@include grid(1/3);}
+.sb1,.sb2{@include grid(4/5);}
 .sb{clear:none;}
 
 //#sidebar4{float:left;} 
